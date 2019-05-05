@@ -6,7 +6,8 @@ const app = express();
 
 app.get('/formatted', async (request, response) => {
 	const activities = await listActivities();
-	response.json(activities.map(formatActivity));
+	const mapped = await Promise.all(activities.map(a => formatActivity(a)));
+	response.json(mapped);
 });
 
 app.get('/', async (request, response) => {
