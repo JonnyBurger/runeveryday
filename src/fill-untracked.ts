@@ -3,7 +3,6 @@ import getDay from './get-day';
 import overrides from './overrides';
 
 export default (runs: DbActivity[]): DbActivity[] => {
-	const reversed = runs.reverse();
 	const array: DbActivity[] = [];
 	const today = getDay(new Date());
 	const days = new Array(today).fill(true).map((_, i) => i + 1);

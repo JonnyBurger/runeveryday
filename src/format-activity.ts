@@ -27,7 +27,7 @@ export default async (activity: SummaryActivity): Promise<DbActivity> => {
 		day,
 		name: activity.name,
 		distance: activity.distance,
-		date: setHours(addDays(dayOne, day), 12).toISOString(),
+		date: new Date(activity.start_date_local).toString(),
 		location: activity.start_latlng,
 		city,
 		country,
