@@ -43,6 +43,23 @@ const overrides: Partial<DbActivity>[] = [
 		injured:
 			'The night before I twisted my ankle after going out while chasing an Uber and stepping into a pothole. I was limping this 2.5km!'
 	},
+	{
+		day: 688,
+		distance: 2500
+	},
+	{
+		day: 1139,
+		distance: 2600
+	},
+	...[658, 659, 660, 661].map(day => ({
+		day,
+		city: 'Sofia'
+	})),
+	...[664, 665, 666, 667, 668, 669, 670, 671, 672].map(day => ({
+		day,
+		sick:
+			"During these days I had fever and was laying in bed all day. But I did not wanna give up and went out running (often while it was snowing). Don't do this!"
+	})),
 	...[
 		1163,
 		1161,
