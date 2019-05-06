@@ -1,12 +1,12 @@
 import express from 'express';
 import mongo from './mongo';
 
-const app = express();
+const router = express.Router();
 
-app.get('/', async (request, response) => {
+router.get('/', async (request, response) => {
 	const db = await mongo();
 	const runs = await db.runs.find().toArray();
 	response.json(runs);
 });
 
-export default app;
+export default router;

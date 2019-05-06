@@ -1,4 +1,10 @@
+import express from 'express';
 import serverless from 'serverless-http';
-import server from '../server';
+import router from '../server';
 
-module.exports.handler = serverless(server);
+const app = express();
+
+app.use('/.netlify/functions/server', router);
+
+module.exports = app;
+module.exports.handler = serverless(app);
