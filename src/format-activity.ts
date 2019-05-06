@@ -8,11 +8,11 @@ export type DbActivity = {
 	day: number;
 	name: string;
 	distance: number;
-	date_debug: string;
 	date: string;
 	location: number[];
 	city: string | null;
 	country: string | null;
+	strava_id: string;
 };
 
 export default async (activity: SummaryActivity): Promise<DbActivity> => {
@@ -24,10 +24,10 @@ export default async (activity: SummaryActivity): Promise<DbActivity> => {
 		day,
 		name: activity.name,
 		distance: activity.distance,
-		date_debug: new Date(activity.start_date_local).toISOString(),
 		date: setHours(addDays(dayOne, day), 12).toISOString(),
 		location: activity.start_latlng,
 		city,
-		country
+		country,
+		strava_id: String(activity.id)
 	};
 };

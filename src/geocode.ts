@@ -11,6 +11,9 @@ export const getLocation = async (
 		);
 		return null;
 	}
+	if (!latlng) {
+		return null;
+	}
 	const query = latlng.join(',');
 	const db = await mongo();
 	const fromCache = await db.geocoding.findOne({

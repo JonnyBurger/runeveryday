@@ -1,4 +1,5 @@
 import mongodb, {MongoClient, ObjectID} from 'mongodb';
+import {DbActivity} from './format-activity';
 
 let _client: MongoClient | null = null;
 
@@ -33,7 +34,7 @@ export default async () => {
 	}
 	return {
 		token: _client.db('runeveryday').collection<TokenCollection>('token'),
-		runs: _client.db('runeveryday').collection<Runs>('runs'),
+		runs: _client.db('runeveryday').collection<DbActivity>('runs'),
 		geocoding: _client.db('runeveryday').collection<GeocodingCache>('geocoding')
 	};
 };

@@ -28,7 +28,8 @@
   "scripts": {
     "test": "rm -rf dist && tsc && ava dist/test",
     "dev": "nodemon src --exec ts-node",
-    "start": "rm -rf dist && tsc && node dist"
+    "start": "rm -rf dist && tsc && node dist",
+    "queue": "rm -rf dist && tsc && node dist/queue"
   },
   "author": "",
   "license": "ISC"
