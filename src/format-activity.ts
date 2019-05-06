@@ -1,6 +1,5 @@
 import {SummaryActivity} from './strava-types/activity';
-import getDay, {dayOne} from './get-day';
-import {addDays, setHours} from 'date-fns';
+import getDay from './get-day';
 import {getCity, getCountry} from './human-location';
 import {getLocation} from './geocode';
 
@@ -16,6 +15,7 @@ export type DbActivity = {
 	treadmill?: string;
 	sick?: string;
 	drunk?: string;
+	injured?: string;
 };
 
 export default async (activity: SummaryActivity): Promise<DbActivity> => {

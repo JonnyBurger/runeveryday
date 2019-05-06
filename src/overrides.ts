@@ -33,6 +33,16 @@ const overrides: Partial<DbActivity>[] = [
 		country: 'Switzerland',
 		treadmill: 'Treadmill'
 	},
+	{
+		day: 1168,
+		injured:
+			'Felt some significant pain in my lower back which just suddenly appeared when I stood up earlier this day'
+	},
+	{
+		day: 565,
+		injured:
+			'The night before I twisted my ankle after going out while chasing an Uber and stepping into a pothole. I was limping this 2.5km!'
+	},
 	...[
 		1163,
 		1161,
