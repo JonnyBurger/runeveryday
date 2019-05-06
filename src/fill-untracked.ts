@@ -5,7 +5,7 @@ export default (runs: DbActivity[]): DbActivity[] => {
 	const reversed = runs.reverse();
 	const array: DbActivity[] = [];
 	const today = getDay(new Date());
-	const days = new Array(today).fill(true).map((_, i) => i);
+	const days = new Array(today - 1).fill(true).map((_, i) => i + 1);
 	for (let day of days) {
 		const runOfThisDay = runs.find(r => r.day === day);
 		if (runOfThisDay) {
