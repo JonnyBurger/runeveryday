@@ -8,16 +8,9 @@ export default (runs: DbActivity[]): DbActivity[] => {
 	const days = new Array(today).fill(true).map((_, i) => i + 1);
 	for (let day of days) {
 		const runOfThisDay = runs.find(r => r.day === day);
-		const override = overrides.find(o => o.day === day);
+		const override = overrides.filter(o => o.day === day);
 		if (runOfThisDay) {
-			array.push(
-				Object.assign(
-					{},
-					runOfThisDay,
-					overrides.find(o => o.day === day),
-					override
-				)
-			);
+			array.push(Object.assign({}, runOfThisDay, ...override));
 		} else {
 			array.push(
 				Object.assign(
@@ -32,7 +25,7 @@ export default (runs: DbActivity[]): DbActivity[] => {
 						location: null,
 						name: 'Untracked'
 					},
-					override
+					...override
 				)
 			);
 		}

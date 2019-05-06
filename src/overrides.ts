@@ -305,7 +305,42 @@ const overrides: Partial<DbActivity>[] = [
 	...[964, 963, 962, 961, 960].map(day => ({
 		day,
 		city: 'Sofia'
-	}))
+	})),
+	{
+		day: 1160,
+		drunk:
+			'Forgot all my running stuff and went to a football game afterwards where I drank some beers'
+	},
+	{
+		day: 170,
+		drunk:
+			'Was going out in Milan and went for a run for the next day when I came home!'
+	},
+	{
+		day: 855,
+		drunk: 'Open Air Southside'
+	},
+	{
+		day: 856,
+		drunk: 'Open Air Southside'
+	},
+	{
+		day: 857,
+		drunk: 'Open Air Southside'
+	},
+	{
+		day: 862,
+		drunk: 'Open Air St. Gallen'
+	},
+	{
+		day: 863,
+		drunk: 'Open Air St. Gallen'
+	},
+	{
+		day: 500,
+		drunk:
+			'I was still totally lit from Open Air St. Gallen when I ran almost at midnight. Probably the drunkest run I ever done'
+	}
 ];
 
 export default overrides;
