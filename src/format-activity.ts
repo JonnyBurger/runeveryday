@@ -7,12 +7,12 @@ import {getLocation} from './geocode';
 export type DbActivity = {
 	day: number;
 	name: string;
-	distance: number;
-	date: string;
-	location: number[];
+	distance: number | null;
+	date: string | null;
+	location: number[] | null;
 	city: string | null;
 	country: string | null;
-	strava_id: string;
+	strava_id: string | null;
 };
 
 export default async (activity: SummaryActivity): Promise<DbActivity> => {
