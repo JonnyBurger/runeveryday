@@ -13,6 +13,9 @@ export type DbActivity = {
 	city: string | null;
 	country: string | null;
 	strava_id: string | null;
+	treadmill?: string;
+	sick?: string;
+	drunk?: string;
 };
 
 export default async (activity: SummaryActivity): Promise<DbActivity> => {
