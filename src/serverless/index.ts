@@ -4,7 +4,7 @@ import router from '../server';
 
 const app = express();
 
-app.use('/.netlify/functions/index', router);
+app.use('/', router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
