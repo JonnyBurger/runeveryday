@@ -14,6 +14,8 @@
     "lodash": "^4.17.11",
     "mongodb": "^3.2.3",
     "ms": "^2.1.1",
+    "netlify-lambda": "^1.4.7",
+    "serverless-http": "^2.0.1",
     "strava-v3": "^1.14.0",
     "typescript": "^3.4.5"
   },
@@ -28,8 +30,10 @@
   "scripts": {
     "test": "rm -rf dist && tsc && ava dist/test",
     "dev": "nodemon src --exec ts-node",
+    "functions": "rm -rf dist && tsc && netlify-lambda build dist/serverless",
     "start": "rm -rf dist && tsc && node dist",
-    "queue": "rm -rf dist && tsc && node dist/queue"
+    "queue": "rm -rf dist && tsc && node dist/queue",
+    "update": "rm -rf dist && tsc && node dist/update"
   },
   "author": "",
   "license": "ISC"
