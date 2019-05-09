@@ -340,6 +340,12 @@ const overrides: Partial<DbActivity>[] = [
 		day: 500,
 		drunk:
 			'I was still totally lit from Open Air St. Gallen when I ran almost at midnight. Probably the drunkest run I ever done'
+	},
+	{
+		day: 1174,
+		distance: 2500,
+		city: 'Zürich',
+		country: 'Switzerland'
 	}
 ];
 
