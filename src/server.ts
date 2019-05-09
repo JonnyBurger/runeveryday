@@ -20,4 +20,11 @@ router.get('/', async (request, response) => {
 	response.json({runs: filled, total: getDay(new Date())});
 });
 
+router.get('/countries', async (request, response) => {
+	const db = await mongo();
+	response.json({
+		countries: (await db.runs.distinct('country', {})).filter(Boolean)
+	});
+});
+
 export default router;
