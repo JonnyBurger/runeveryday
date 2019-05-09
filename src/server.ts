@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import mongo from './mongo';
 import fillUntracked from './fill-untracked';
+import getDay from './get-day';
 
 const router = express.Router();
 
@@ -9,13 +10,14 @@ router.use(cors());
 router.get('/', async (request, response) => {
 	const offset = Number(request.query.offset || 0);
 	const db = await mongo();
+	const day = getDay(new Date()) - offset;
 	const runs = await db.runs
-		.find()
-		.skip(offset)
-		.limit(100)
+		.find({
+			day: {$lte: day, $gt: day - 100}
+		})
 		.toArray();
-	const filled = fillUntracked(runs);
-	response.json(filled);
+	const filled = fillUntracked(runs, offset, 100);
+	response.json({runs: filled, total: getDay(new Date())});
 });
 
 export default router;

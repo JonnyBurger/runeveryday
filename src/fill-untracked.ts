@@ -2,10 +2,18 @@ import {DbActivity} from './format-activity';
 import getDay from './get-day';
 import overrides from './overrides';
 
-export default (runs: DbActivity[]): DbActivity[] => {
+export default (
+	runs: DbActivity[],
+	offset: number,
+	limit: number
+): DbActivity[] => {
 	const array: DbActivity[] = [];
 	const today = getDay(new Date());
-	const days = new Array(today).fill(true).map((_, i) => i + 1);
+	let days = new Array(today).fill(true).map((_, i) => i + 1);
+	days = days
+		.reverse()
+		.splice(offset, limit)
+		.reverse();
 	for (let day of days) {
 		const runOfThisDay = runs.find(r => r.day === day);
 		const override = overrides.filter(o => o.day === day);
