@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: circleci/node:lts
     steps:
+      - checkout
       - run: npm install
       - run: npm run update
 
