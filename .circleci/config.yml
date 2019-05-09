@@ -1,10 +1,11 @@
 version: 2
   jobs:
-    docker:
-      - image: circleci/node:lts
-    steps:
-      - run: npm install
-      - run: npm run update
+    update:
+      docker:
+        - image: circleci/node:lts
+      steps:
+        - run: npm install
+        - run: npm run update
 
 workflows:
   version: 2
