@@ -345,7 +345,8 @@ const overrides: Partial<DbActivity>[] = [
 		day: 1174,
 		distance: 2500,
 		city: 'Zürich',
-		country: 'Switzerland'
+		country: 'Switzerland',
+		date: new Date('2019-05-07T22:06:45.003Z')
 	}
 ];
 
