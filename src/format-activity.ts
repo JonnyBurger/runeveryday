@@ -7,7 +7,7 @@ export type DbActivity = {
 	day: number;
 	name: string;
 	distance: number | null;
-	date: string | null;
+	date: number | null;
 	location: number[] | null;
 	city: string | null;
 	country: string | null;
@@ -27,7 +27,7 @@ export default async (activity: SummaryActivity): Promise<DbActivity> => {
 		day,
 		name: activity.name,
 		distance: activity.distance,
-		date: new Date(activity.start_date_local).toString(),
+		date: new Date(activity.start_date_local).getTime(),
 		location: activity.start_latlng,
 		city,
 		country,
