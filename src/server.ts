@@ -17,7 +17,12 @@ router.get('/', async (request, response) => {
 		})
 		.toArray();
 	const filled = fillUntracked(runs, offset, 100);
-	response.json({runs: filled, total: getDay(new Date())});
+	const one = await db.runs
+		.find({})
+		.sort({day: -1})
+		.limit(1)
+		.toArray();
+	response.json({runs: filled, total: one ? one[0].day : 0});
 });
 
 router.get('/countries', async (request, response) => {
