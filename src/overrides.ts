@@ -61,6 +61,8 @@ const overrides: Partial<DbActivity>[] = [
 			"During these days I had fever and was laying in bed all day. But I did not wanna give up and went out running (often while it was snowing). Don't do this!"
 	})),
 	...[
+		1183,
+		1180,
 		1177,
 		1176,
 		1163,
@@ -349,6 +351,11 @@ const overrides: Partial<DbActivity>[] = [
 		city: 'Zürich',
 		country: 'Switzerland',
 		date: 1557252405003
+	},
+	{
+		day: 1178,
+		city: 'Zürich',
+		country: 'Switzerland'
 	}
 ];
 
