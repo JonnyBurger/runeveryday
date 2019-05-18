@@ -31,6 +31,7 @@ export default async (activity: SummaryActivity): Promise<DbActivity> => {
 		location: activity.start_latlng,
 		city,
 		country,
+		treadmill: activity.name.match(/treadmill/i) ? 'Treadmill' : undefined,
 		strava_id: String(activity.id)
 	};
 };
