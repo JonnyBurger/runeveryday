@@ -28,6 +28,12 @@ workflows:
     jobs:
       - update
   avatar:
-
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
     jobs:
       - avatar
