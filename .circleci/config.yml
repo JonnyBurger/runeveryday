@@ -7,6 +7,13 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run update
+  avatar:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run update-twitter-pic
 
 workflows:
   version: 2
@@ -20,3 +27,4 @@ workflows:
                 - master
     jobs:
       - update
+      - avatar
