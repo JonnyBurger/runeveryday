@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import Twit from 'twit';
+import createNewProfileImage from './create-new-profile-image';
 
 dotenv.config();
 
@@ -14,10 +15,15 @@ export default async (days: number) => {
 	});
 	const howManyXEngineer =
 		engineerAmounts[Math.floor(Math.random() * engineerAmounts.length)];
-	return T.post('account/update_profile', {
+	await T.post('account/update_profile', {
 		// @ts-ignore - types are wrong
 		description: `${(Math.random() * 20 - 5).toFixed(
 			2
 		)}x hacker, ${howManyXEngineer} engineer - working on @BestandeApp @AnystickerApp.\nRan ${days} days in a row so far: jonny.run\nMe and my friends hacking = @foronered`
+	});
+	const image = await createNewProfileImage();
+	await T.post('account/update_profile_image', {
+		// @ts-ignore - types are wrong
+		image: image.replace('data:image/png;base64,', '')
 	});
 };
