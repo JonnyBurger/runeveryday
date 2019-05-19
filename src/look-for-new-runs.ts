@@ -2,7 +2,7 @@ import listActivities from './list-activities';
 import mongo from './mongo';
 import formatActivity from './format-activity';
 
-export default async () => {
+export default async (): Promise<number> => {
 	const activities = await listActivities(1, 2);
 	for (let activity of activities) {
 		const db = await mongo();
@@ -25,4 +25,7 @@ export default async () => {
 			console.log(`Inserted day ${formatted.day}`);
 		}
 	}
+	const highestActivity = await formatActivity(activities[0]);
+	const highestDay = highestActivity.day;
+	return highestDay;
 };
