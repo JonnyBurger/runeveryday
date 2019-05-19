@@ -28,5 +28,6 @@ workflows:
     jobs:
       - update
   avatar:
+
     jobs:
       - avatar
