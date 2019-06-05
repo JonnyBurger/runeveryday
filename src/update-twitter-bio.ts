@@ -10,7 +10,7 @@ const T = new Twit({
 	access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET as string
 });
 
-const engineerAmounts = ['0x', '-0.00001x', 'undefinedx', '0y', 'NaNx', ''];
+const engineerAmounts = ['0x', '-0.00001x', 'undefinedx', '0y', 'NaNx'];
 
 export default async (days: number) => {
 	const howManyXEngineer =
