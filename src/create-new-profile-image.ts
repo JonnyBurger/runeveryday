@@ -9,7 +9,7 @@ export default async () => {
 		opacitySource: 0.7,
 		mode: Jimp.BLEND_SOURCE_OVER
 	});
-	const fg = await Jimp.read('./assets/jonny.png');
+	const fg = await Jimp.read('./assets/jonny400.png');
 	const combined = await lightBg.composite(fg, 0, 0);
 	return combined.getBase64Async('image/png');
 };
