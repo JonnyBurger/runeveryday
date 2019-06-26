@@ -2,6 +2,11 @@ import {DbActivity} from './format-activity';
 
 const overrides: Partial<DbActivity>[] = [
 	{
+		day: 1222,
+		drunk:
+			'We hacked the whole weekend at the Swiss Blockchain hackathon and on Sunday afternoon we got up late and went to the award ceremony. Then we found out that we won the hackathon and $20k for our team, so of course we got lit. Only after that I had time to go for my run.'
+	},
+	{
 		day: 1172,
 		distance: 3440,
 		city: 'Zürich',
