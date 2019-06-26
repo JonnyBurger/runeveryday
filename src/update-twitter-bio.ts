@@ -17,7 +17,7 @@ const engineerAmounts = [
 	'0y',
 	'NaNx',
 	'nullx',
-	'0.30000000000000004'
+	'0.30000000000000004x'
 ];
 
 export default async (days: number) => {
