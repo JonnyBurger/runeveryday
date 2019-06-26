@@ -10,7 +10,15 @@ const T = new Twit({
 	access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET as string
 });
 
-const engineerAmounts = ['0x', '-0.00001x', 'undefinedx', '0y', 'NaNx'];
+const engineerAmounts = [
+	'0x',
+	'-0.00001x',
+	'undefinedx',
+	'0y',
+	'NaNx',
+	'nullx',
+	'0.30000000000000004'
+];
 
 export default async (days: number) => {
 	const howManyXEngineer =
@@ -19,6 +27,6 @@ export default async (days: number) => {
 		// @ts-ignore - types are wrong
 		description: `${(Math.random() * 20 - 5).toFixed(
 			2
-		)}x hacker, ${howManyXEngineer} engineer - working on @BestandeApp @AnystickerApp.\nRan ${days} days in a row, so far: jonny.run\nMe and my friends hacking = @foronered`
+		)}x hacker, ${howManyXEngineer} engineer - working on @BestandeApp @AnystickerApp.\nRan ${days} days in a row: jonny.run\nPart time hacker at @Axelra15`
 	});
 };
