@@ -1,6 +1,6 @@
 workflow "Update github" {
   on = "schedule(0/5 * * * *)"
-  resolves = ["Install"]
+  resolves = ["Install", "Update"]
 }
 
 action "Install" {
