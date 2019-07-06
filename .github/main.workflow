@@ -1,6 +1,6 @@
 workflow "Update jonny.run" {
   resolves = ["Install", "Update"]
-  on = "schedule(0/5 * * * *)"
+  on = "schedule(0 * * * *)"
 }
 
 action "Install" {
@@ -17,7 +17,7 @@ action "Update" {
 
 workflow "Update Twitter Bio" {
   resolves = ["GitHub Action for npm-1"]
-  on = "schedule(0/5 * * * *)"
+  on = "schedule(0 0   * * *)"
 }
 
 action "GitHub Action for npm" {
@@ -28,6 +28,6 @@ action "GitHub Action for npm" {
 action "GitHub Action for npm-1" {
   uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
   needs = ["GitHub Action for npm"]
-  args = "run update-twitter-bio"
+  args = "run update-twitter-pic"
   secrets = ["TWITTER_ACCESS_TOKEN", "TWITTER_ACCESS_TOKEN_SECRET", "TWITTER_API_PUBLIC_KEY", "TWITTER_API_SECRET_KEY"]
 }
