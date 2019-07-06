@@ -16,8 +16,8 @@ action "Update" {
 }
 
 workflow "Update Twitter Bio" {
-  on = "schedule(0/5 0 * * *)"
   resolves = ["GitHub Action for npm-1"]
+  on = "schedule(0/5 * * * *)"
 }
 
 action "GitHub Action for npm" {
