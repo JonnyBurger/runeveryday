@@ -1,6 +1,6 @@
 workflow "Update github" {
-  on = "schedule(0 * * * *)"
   resolves = ["GitHub Action for npm"]
+  on = "schedule(0/5 * * * *)"
 }
 
 action "GitHub Action for npm" {
