@@ -27,6 +27,6 @@ export default async (days: number) => {
 		// @ts-ignore - types are wrong
 		description: `${(Math.random() * 20 - 5).toFixed(
 			2
-		)}x hacker, ${howManyXEngineer} engineer - working on @BestandeApp @AnystickerApp.\nRan ${days} days in a row: jonny.run\nPart time hacker at @Axelra15`
+		)}x hacker, ${howManyXEngineer} engineer - working on @BestandeApp @AnystickerApp.\nRan ${days} days in a row: jonny.run\nPart time hacker at @Axelra_AG`
 	});
 };
