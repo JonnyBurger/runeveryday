@@ -3,13 +3,13 @@ import mongo from './mongo';
 import formatActivity from './format-activity';
 import getDay from './get-day';
 
-export default async () => {
+export default async (): Promise<void> => {
 	let earliestDayFetched = getDay(new Date());
 	let page = 1;
 	while (earliestDayFetched > 0) {
 		const activities = await listActivities(page);
 		page++;
-		for (let activity of activities) {
+		for (const activity of activities) {
 			const db = await mongo();
 			const formatted = await formatActivity(activity);
 			const exists = await db.runs.findOne({
@@ -17,7 +17,7 @@ export default async () => {
 			});
 			earliestDayFetched = formatted.day;
 			if (formatted.day <= 0) {
-				return 0;
+				return;
 			}
 			if (exists) {
 				await db.runs.updateOne(

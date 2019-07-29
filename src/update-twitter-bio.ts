@@ -20,7 +20,7 @@ const engineerAmounts = [
 	'0.30000000000000004x'
 ];
 
-export default async (days: number) => {
+export default async (days: number): Promise<void> => {
 	const howManyXEngineer =
 		engineerAmounts[Math.floor(Math.random() * engineerAmounts.length)];
 	await T.post('account/update_profile', {

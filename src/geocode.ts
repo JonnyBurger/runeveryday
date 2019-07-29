@@ -1,5 +1,5 @@
-import got from 'got';
 import qs from 'querystring';
+import got from 'got';
 import mongo, {Geocoding} from './mongo';
 
 export const getLocation = async (

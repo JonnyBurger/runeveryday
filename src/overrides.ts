@@ -56,15 +56,19 @@ const overrides: Partial<DbActivity>[] = [
 		day: 1139,
 		distance: 2600
 	},
-	...[658, 659, 660, 661].map(day => ({
-		day,
-		city: 'Sofia'
-	})),
-	...[664, 665, 666, 667, 668, 669, 670, 671, 672].map(day => ({
-		day,
-		sick:
-			"During these days I had fever and was laying in bed all day. But I did not wanna give up and went out running (often while it was snowing). Don't do this!"
-	})),
+	...[658, 659, 660, 661].map(
+		(day: number): Partial<DbActivity> => ({
+			day,
+			city: 'Sofia'
+		})
+	),
+	...[664, 665, 666, 667, 668, 669, 670, 671, 672].map(
+		(day): Partial<DbActivity> => ({
+			day,
+			sick:
+				"During these days I had fever and was laying in bed all day. But I did not wanna give up and went out running (often while it was snowing). Don't do this!"
+		})
+	),
 	...[
 		1183,
 		1180,
@@ -266,20 +270,24 @@ const overrides: Partial<DbActivity>[] = [
 		480,
 		477,
 		475
-	].map(day => ({
-		day,
-		distance: 2500,
-		city: 'Zürich',
-		country: 'Switzerland',
-		treadmill: 'Treadmill'
-	})),
-	...[919, 915, 914, 913, 912, 911, 910].map(day => ({
-		day,
-		distance: 2500,
-		city: 'Los Angeles',
-		country: 'United States',
-		treadmill: 'Bunker Hill Towers Gym Treadmil'
-	})),
+	].map(
+		(day: number): Partial<DbActivity> => ({
+			day,
+			distance: 2500,
+			city: 'Zürich',
+			country: 'Switzerland',
+			treadmill: 'Treadmill'
+		})
+	),
+	...[919, 915, 914, 913, 912, 911, 910].map(
+		(day: number): Partial<DbActivity> => ({
+			day,
+			distance: 2500,
+			city: 'Los Angeles',
+			country: 'United States',
+			treadmill: 'Bunker Hill Towers Gym Treadmil'
+		})
+	),
 	...[
 		928,
 		927,
@@ -303,18 +311,24 @@ const overrides: Partial<DbActivity>[] = [
 		903,
 		902,
 		901
-	].map(day => ({
-		day,
-		city: 'Los Angeles'
-	})),
-	...[170, 730].map(day => ({
-		day,
-		city: 'Milan'
-	})),
-	...[964, 963, 962, 961, 960].map(day => ({
-		day,
-		city: 'Sofia'
-	})),
+	].map(
+		(day: number): Partial<DbActivity> => ({
+			day,
+			city: 'Los Angeles'
+		})
+	),
+	...[170, 730].map(
+		(day: number): Partial<DbActivity> => ({
+			day,
+			city: 'Milan'
+		})
+	),
+	...[964, 963, 962, 961, 960].map(
+		(day: number): Partial<DbActivity> => ({
+			day,
+			city: 'Sofia'
+		})
+	),
 	{
 		day: 1160,
 		drunk:

@@ -1,15 +1,15 @@
-import got from 'got';
 import qs from 'querystring';
+import got from 'got';
 import dotenv from 'dotenv';
 import mongo from './mongo';
 
 dotenv.config();
 
-type TokenResponse = {
+interface TokenResponse {
 	access_token: string;
 	refresh_token: string;
 	expires_at: number;
-};
+}
 
 export default async (): Promise<TokenResponse> => {
 	const db = await mongo();
@@ -38,13 +38,7 @@ export default async (): Promise<TokenResponse> => {
 			json: true
 		}
 	);
-	const body: {
-		access_token: string;
-		expires_at: number;
-		token_type: string;
-		expires_in: number;
-		refresh_token: string;
-	} = response.body;
+	const {body} = response;
 	await db.token.updateOne(
 		{},
 		{

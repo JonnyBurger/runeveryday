@@ -11,6 +11,6 @@ export default async (activity: string): Promise<DetailedActivity> => {
 		},
 		json: true
 	});
-	const body: DetailedActivity = response.body;
+	const {body} = response;
 	return body;
 };

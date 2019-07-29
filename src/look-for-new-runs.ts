@@ -4,7 +4,7 @@ import formatActivity from './format-activity';
 
 export default async (): Promise<number> => {
 	const activities = await listActivities(1, 2);
-	for (let activity of activities) {
+	for (const activity of activities) {
 		const db = await mongo();
 		const formatted = await formatActivity(activity);
 		const exists = await db.runs.findOne({

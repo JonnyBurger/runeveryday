@@ -1,10 +1,14 @@
 import indexActivities from './index-activities';
 
 indexActivities()
-	.then(() => {
-		console.log('done');
-		process.exit(0);
-	})
-	.catch(err => {
-		console.log(err);
-	});
+	.then(
+		(): void => {
+			console.log('done');
+			process.exit(0);
+		}
+	)
+	.catch(
+		(err): void => {
+			console.log(err);
+		}
+	);

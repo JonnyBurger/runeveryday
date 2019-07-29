@@ -1,15 +1,18 @@
 {
   "name": "runeveryday",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend for jonny.run",
+  "repository": "JonnyBurger/runeveryday",
   "main": "index.js",
   "dependencies": {
+    "@jonny/eslint-config": "^2.0.1",
     "@types/mongodb": "^3.1.26",
     "@types/ms": "^0.7.30",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "date-fns": "^2.0.0-alpha.27",
     "dotenv": "^8.0.0",
+    "eslint": "^6.1.0",
     "express": "^4.16.4",
     "got": "^9.6.0",
     "jimp": "^0.6.4",
@@ -28,11 +31,12 @@
     "@types/express": "^4.16.1",
     "@types/got": "^9.4.4",
     "@types/node": "^12.0.0",
-    "@types/twit": "^2.2.21",
+    "@types/twit": "^2.2.22",
     "ava": "^1.4.1",
     "nodemon": "^1.19.0"
   },
   "scripts": {
+    "lint": "eslint --cache '**/*.{js,ts,tsx}' --ignore-path .gitignore",
     "test": "rm -rf dist && tsc && ava dist/test",
     "dev": "nodemon src --exec ts-node",
     "functions": "rm -rf dist && tsc && netlify-lambda build dist/serverless",

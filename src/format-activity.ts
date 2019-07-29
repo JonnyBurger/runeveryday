@@ -3,7 +3,7 @@ import getDay from './get-day';
 import {getCity, getCountry} from './human-location';
 import {getLocation} from './geocode';
 
-export type DbActivity = {
+export interface DbActivity {
 	day: number;
 	name: string;
 	distance: number | null;
@@ -16,7 +16,7 @@ export type DbActivity = {
 	sick?: string;
 	drunk?: string;
 	injured?: string;
-};
+}
 
 export default async (activity: SummaryActivity): Promise<DbActivity> => {
 	const day = getDay(new Date(activity.start_date_local));

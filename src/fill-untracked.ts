@@ -9,14 +9,14 @@ export default (
 ): DbActivity[] => {
 	const array: DbActivity[] = [];
 	const today = getDay(new Date());
-	let days = new Array(today).fill(true).map((_, i) => i + 1);
+	let days = new Array(today).fill(true).map((_, i): number => i + 1);
 	days = days
 		.reverse()
 		.splice(offset, limit)
 		.reverse();
-	for (let day of days) {
-		const runOfThisDay = runs.find(r => r.day === day);
-		const override = overrides.filter(o => o.day === day);
+	for (const day of days) {
+		const runOfThisDay = runs.find((r): boolean => r.day === day);
+		const override = overrides.filter((o): boolean => o.day === day);
 		if (runOfThisDay) {
 			array.push(Object.assign({}, runOfThisDay, ...override));
 		} else {

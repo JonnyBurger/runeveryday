@@ -1,6 +1,6 @@
 import Jimp = require('jimp');
 
-export default async () => {
+export default async (): Promise<string> => {
 	const bg = await Jimp.read('https://gradientjoy.com/400x400');
 	const white = await Jimp.read('./assets/white.png');
 

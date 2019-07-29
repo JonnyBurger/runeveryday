@@ -11,10 +11,10 @@ const T = new Twit({
 	access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET as string
 });
 
-export default async () => {
+export default async (): Promise<void> => {
 	const image = await createNewProfileImage();
 	await T.post('account/update_profile_image', {
-		// @ts-ignore - types are wrong
+		// @ts-ignore
 		image: image.replace('data:image/png;base64,', '')
 	});
 };

@@ -75,7 +75,7 @@ export interface Lap {
 	total_elevation_gain: number;
 }
 
-export interface PhotoSummary_primary {
+export interface PhotoSummaryPrimaryType {
 	id: number;
 	source: number;
 	unique_id: string;
@@ -84,25 +84,13 @@ export interface PhotoSummary_primary {
 
 export interface PhotoSummary {
 	count: number;
-	primary: PhotoSummary_primary;
+	primary: PhotoSummaryPrimaryType;
 }
 
 export interface PolylineMap {
 	id: string;
 	polyline: string;
 	summary_polyline: string;
-}
-
-export interface PhotoSummary_primary {
-	id: number;
-	source: number;
-	unique_id: string;
-	urls: string;
-}
-
-export interface PhotoSummary {
-	count: number;
-	primary: PhotoSummary_primary;
 }
 
 export interface MetaAthlete {
