@@ -3,7 +3,7 @@ import mongo from './mongo';
 import formatActivity from './format-activity';
 
 export default async (): Promise<number> => {
-	const activities = await listActivities(1, 2);
+	const activities = await listActivities(1, 18);
 	for (const activity of activities) {
 		const db = await mongo();
 		const formatted = await formatActivity(activity);
