@@ -375,7 +375,15 @@ const overrides: Partial<DbActivity>[] = [
 		day: 1178,
 		city: 'Zürich',
 		country: 'Switzerland'
-	}
+	},
+	...[1270, 1271, 1272].map(
+		(day: number): Partial<DbActivity> => ({
+			city: 'Budapest',
+			country: 'Hungary',
+			day,
+			drunk: 'Sziget Festival'
+		})
+	)
 ];
 
 export default overrides;
