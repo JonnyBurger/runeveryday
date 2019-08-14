@@ -19,12 +19,39 @@ const overrides: Partial<DbActivity>[] = [
 		country: 'Switzerland',
 		treadmill: 'Manual Treadmill'
 	},
-	{
-		day: 1170,
-		distance: 2500,
-		city: 'Zürich',
-		country: 'Switzerland'
-	},
+	...[
+		1170,
+		1184,
+		1187,
+		1189,
+		1192,
+		1193,
+		1195,
+		1196,
+		1208,
+		1210,
+		1213,
+		1218,
+		1232,
+		1235,
+		1236,
+		1237,
+		1239,
+		1245,
+		1247,
+		1253,
+		1254,
+		1257,
+		1265,
+		1266
+	].map(
+		(day: number): Partial<DbActivity> => ({
+			day,
+			distance: 2500,
+			city: 'Zürich',
+			country: 'Switzerland'
+		})
+	),
 	{
 		day: 1167,
 		distance: 2500,
