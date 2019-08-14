@@ -38,4 +38,21 @@ router.get(
 	}
 );
 
+router.get(
+	'/average-distance',
+	async (request, response): Promise<void> => {
+		const db = await mongo();
+		response.json(
+			await db.runs.aggregate([
+				{
+					$group: {
+						_id: null,
+						distance: {$avg: '$distance'}
+					}
+				}
+			])
+		);
+	}
+);
+
 export default router;
