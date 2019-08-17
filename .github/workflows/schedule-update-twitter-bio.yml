@@ -1,8 +1,6 @@
 on:
-  watch
-  push
-  schedules:
-  - cron: 0 0   * * *
+  schedule:
+  - cron: 0 0 * * *
 
 name: Update Twitter Bio
 jobs:
