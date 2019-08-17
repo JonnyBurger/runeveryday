@@ -1,5 +1,5 @@
 on:
-  schedule:
+  schedules:
   - cron: 0 * * * *
 name: Update jonny.run
 jobs:
