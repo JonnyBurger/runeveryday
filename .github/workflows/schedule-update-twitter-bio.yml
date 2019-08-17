@@ -1,6 +1,9 @@
 on:
+  watch
+  push
   schedules:
   - cron: 0 0   * * *
+
 name: Update Twitter Bio
 jobs:
   gitHubActionForNpm:
