@@ -410,6 +410,12 @@ const overrides: Partial<DbActivity>[] = [
 			day,
 			drunk: 'Sziget Festival'
 		})
+	),
+	...[1275, 1276, 1277].map(
+		(day: number): Partial<DbActivity> => ({
+			day,
+			sick: 'Light fever 🤒'
+		})
 	)
 ];
 
