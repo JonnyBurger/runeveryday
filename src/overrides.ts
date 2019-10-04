@@ -418,6 +418,12 @@ const overrides: Partial<DbActivity>[] = [
 			day,
 			sick: 'Light fever 🤒'
 		})
+	),
+	...[1324].map(
+		(day: number): Partial<DbActivity> => ({
+			day,
+			country: 'Liechtenstein,Schweiz,Österreich'
+		})
 	)
 ];
 
