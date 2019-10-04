@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import {flatten} from 'lodash';
 import mongo from './mongo';
 import fillUntracked from './fill-untracked';
 import getDay from './get-day';
@@ -33,7 +34,11 @@ router.get(
 	async (request, response): Promise<void> => {
 		const db = await mongo();
 		response.json({
-			countries: (await db.runs.distinct('country', {})).filter(Boolean)
+			countries: flatten(
+				(await db.runs.distinct('country', {}))
+					.filter(Boolean)
+					.map((c: string): string[] => c.split(','))
+			)
 		});
 	}
 );
