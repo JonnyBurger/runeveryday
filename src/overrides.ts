@@ -422,7 +422,7 @@ const overrides: Partial<DbActivity>[] = [
 	...[1324].map(
 		(day: number): Partial<DbActivity> => ({
 			day,
-			country: 'Liechtenstein,Schweiz,Österreich'
+			country: 'Liechtenstein,Switzerland,Austria'
 		})
 	)
 ];
