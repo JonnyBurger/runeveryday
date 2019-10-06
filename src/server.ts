@@ -1,9 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-import {flatten} from 'lodash';
+import {flatten, uniq} from 'lodash';
 import mongo from './mongo';
 import fillUntracked from './fill-untracked';
 import getDay from './get-day';
+import overrides from './overrides';
 
 const router = express.Router();
 
@@ -33,12 +34,16 @@ router.get(
 	'/countries',
 	async (request, response): Promise<void> => {
 		const db = await mongo();
+		const overrideCountries = flatten(
+			overrides.map((o): string | null | undefined => o.country)
+		).filter(Boolean) as string[];
+		const dbCountries = flatten(
+			(await db.runs.distinct('country', {}))
+				.filter(Boolean)
+				.map((c: string): string[] => c.split(','))
+		);
 		response.json({
-			countries: flatten(
-				(await db.runs.distinct('country', {}))
-					.filter(Boolean)
-					.map((c: string): string[] => c.split(','))
-			)
+			countries: uniq([...overrideCountries, ...dbCountries])
 		});
 	}
 );
