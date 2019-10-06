@@ -35,8 +35,10 @@ router.get(
 	async (request, response): Promise<void> => {
 		const db = await mongo();
 		const overrideCountries = flatten(
-			overrides.map((o): string | null | undefined => o.country)
-		).filter(Boolean) as string[];
+			(overrides
+				.map((o): string | null | undefined => o.country)
+				.filter(Boolean) as string[]).map((c: string): string[] => c.split(','))
+		) as string[];
 		const dbCountries = flatten(
 			(await db.runs.distinct('country', {}))
 				.filter(Boolean)
