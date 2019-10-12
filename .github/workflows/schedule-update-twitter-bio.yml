@@ -1,6 +1,6 @@
 on:
   schedule:
-  - cron: 0 0 * * *
+  - cron: 0 9/12 * * *
 
 name: Update Twitter Bio
 jobs:
