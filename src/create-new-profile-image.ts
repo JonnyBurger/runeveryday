@@ -1,8 +1,14 @@
 import Jimp = require('jimp');
 
 export default async (): Promise<string> => {
-	const hoursInZurich = new Date(Date.now() + 60 * 1000 * 2).getUTCHours();
-	const darkMode = hoursInZurich >= 19 || hoursInZurich < 7;
+	const hoursInZurich = parseInt(
+		new Intl.DateTimeFormat('en', {
+			timeZone: 'Europe/Zurich',
+			hour: '2-digit',
+			hour12: false
+		}).format(new Date())
+	);
+	const darkMode = hoursInZurich >= 19 || hoursInZurich < 6.9;
 	const bg = await Jimp.read('https://gradientjoy.com/400x400');
 	const background = await Jimp.read(
 		darkMode ? './assets/black.png' : './assets/white.png'
