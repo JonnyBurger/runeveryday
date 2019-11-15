@@ -12,7 +12,7 @@ jobs:
     - run: |
         npm i
     - run: |
-        npm run twitter-bio
+        npm run update-twitter-bio
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
