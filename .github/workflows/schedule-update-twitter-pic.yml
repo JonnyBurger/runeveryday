@@ -2,20 +2,13 @@ on: push
 name: 📸 Update Twitter Picture
 jobs:
   gitHubActionForNpm:
-    name: GitHub Action for npm
+    name: Update Twitter Bio
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: GitHub Action for npm
-      uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
-      with:
-        args: i
-    - name: GitHub Action for npm-1
-      uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
-      env:
+    - run: npm i
+    - run: npm run update-twitter-pic
         TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
         TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
         TWITTER_API_PUBLIC_KEY: ${{ secrets.TWITTER_API_PUBLIC_KEY }}
         TWITTER_API_SECRET_KEY: ${{ secrets.TWITTER_API_SECRET_KEY }}
-      with:
-        args: run update-twitter-pic
