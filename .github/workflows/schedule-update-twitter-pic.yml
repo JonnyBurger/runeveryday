@@ -1,6 +1,4 @@
-on:
-  schedule:
-    - cron: 0 7/12 * * *
+on: push
 name: 📸 Update Twitter Picture
 jobs:
   gitHubActionForNpm:
