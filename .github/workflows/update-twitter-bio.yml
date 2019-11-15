@@ -1,7 +1,6 @@
-# on:
-#   schedule:
-#   - cron: 0 * * * *
-on: push
+on:
+  schedule:
+  - cron: 0 * * * *
 name: 🐦 Update Twitter Bio
 jobs:
   update:
