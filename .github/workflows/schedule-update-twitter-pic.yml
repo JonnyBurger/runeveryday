@@ -2,7 +2,7 @@ on:
   schedule:
   - cron: 0 7/12 * * *
 
-name: Update Twitter Bio
+name: 📸 Update Twitter Picture
 jobs:
   gitHubActionForNpm:
     name: GitHub Action for npm
