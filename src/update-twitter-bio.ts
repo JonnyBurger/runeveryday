@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import got from 'got';
 import Twit from 'twit';
 
 dotenv.config();
@@ -20,13 +21,19 @@ const engineerAmounts = [
 	'0.30000000000000004x'
 ];
 
-export default async (days: number): Promise<void> => {
+export default async (): Promise<void> => {
 	const howManyXEngineer =
 		engineerAmounts[Math.floor(Math.random() * engineerAmounts.length)];
+	const runs = await got('https://api.jonny.run/.netlify/functions/index', {
+		json: true
+	});
+
 	await T.post('account/update_profile', {
 		// @ts-ignore - types are wrong
 		description: `${(Math.random() * 20 - 5).toFixed(
 			2
-		)}x hacker, ${howManyXEngineer} engineer - working on @BestandeApp @AnystickerApp.\nRan ${days} days in a row: jonny.run\nPart time hacker at @Axelra_AG`
+		)}x hacker, ${howManyXEngineer} engineer - working on @BestandeApp @AnystickerApp.\nRan ${
+			runs.body.total
+		} days in a row: jonny.run\nPart time hacker at @Axelra_AG`
 	});
 };
