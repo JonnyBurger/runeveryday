@@ -1,4 +1,4 @@
-import {DbActivity} from './format-activity';
+import { DbActivity } from './format-activity';
 
 const overrides: Partial<DbActivity>[] = [
 	{
@@ -424,7 +424,11 @@ const overrides: Partial<DbActivity>[] = [
 			day,
 			country: 'Liechtenstein,Switzerland,Austria'
 		})
-	)
+	),
+	{
+		day: 1380,
+		distance: 3000
+	}
 ];
 
 export default overrides;
