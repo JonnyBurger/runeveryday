@@ -10,8 +10,8 @@ jobs:
     - uses: actions/checkout@master
     - run: |
         npm i
-    - name: Update
-      uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
+    - run: |
+        npm run update
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
@@ -23,5 +23,3 @@ jobs:
         TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
         TWITTER_API_PUBLIC_KEY: ${{ secrets.TWITTER_API_PUBLIC_KEY }}
         TWITTER_API_SECRET_KEY: ${{ secrets.TWITTER_API_SECRET_KEY }}
-      with:
-        args: run update
