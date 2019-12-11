@@ -1,0 +1,26 @@
+on:
+  schedule:
+  - cron: 30 * * * *
+name: 🏃🏻‍♂️ Add weather
+jobs:
+  update:
+    name: Update
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: |
+        npm i
+    - run: |
+        npm run update-weather
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
+        MONGO_URL: ${{ secrets.MONGO_URL }}
+        STRAVA_ACCESS_TOKEN: ${{ secrets.STRAVA_ACCESS_TOKEN }}
+        STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+        STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+        TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+        TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+        TWITTER_API_PUBLIC_KEY: ${{ secrets.TWITTER_API_PUBLIC_KEY }}
+        TWITTER_API_SECRET_KEY: ${{ secrets.TWITTER_API_SECRET_KEY }}
+  

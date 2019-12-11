@@ -24,9 +24,9 @@ const engineerAmounts = [
 export default async (): Promise<void> => {
 	const howManyXEngineer =
 		engineerAmounts[Math.floor(Math.random() * engineerAmounts.length)];
-	const runs = await got('https://api.jonny.run/.netlify/functions/index', {
-		json: true
-	});
+	const runs = (await got(
+		'https://api.jonny.run/.netlify/functions/index'
+	).json()) as any;
 
 	await T.post('account/update_profile', {
 		// @ts-ignore - types are wrong

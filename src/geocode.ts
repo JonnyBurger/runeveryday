@@ -1,6 +1,6 @@
 import qs from 'querystring';
 import got from 'got';
-import mongo, {Geocoding} from './mongo';
+import mongo, { Geocoding } from './mongo';
 
 export const getLocation = async (
 	latlng: number[]
@@ -23,16 +23,13 @@ export const getLocation = async (
 		console.log('from cache');
 		return fromCache.response;
 	}
-	const result = await got(
+	const result = (await got(
 		`https://maps.googleapis.com/maps/api/geocode/json?${qs.stringify({
 			address: latlng.join(','),
 			key: process.env.GOOGLE_MAPS_KEY
-		})}`,
-		{
-			json: true
-		}
-	);
-	const response = result.body.results[0].address_components;
+		})}`
+	).json()) as any;
+	const response = result.results[0].address_components;
 	await db.geocoding.insertOne({
 		query,
 		response
