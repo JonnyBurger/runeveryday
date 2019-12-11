@@ -431,7 +431,12 @@ const overrides: Partial<DbActivity>[] = [
 	},
 	{
 		day: 1364,
-		strava_id: '2863018618'
+		strava_id: '2863018618',
+		distance: 3000
+	},
+	{
+		day: 1358,
+		distance: 3000
 	}
 ];
 
