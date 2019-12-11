@@ -24,7 +24,7 @@
     "serverless-http": "^2.0.1",
     "strava-v3": "^1.14.0",
     "twit": "^2.2.11",
-    "typescript": "^3.4.5"
+    "typescript": "^3.7.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.5",

@@ -422,7 +422,9 @@ const overrides: Partial<DbActivity>[] = [
 	...[1324].map(
 		(day: number): Partial<DbActivity> => ({
 			day,
-			country: 'Liechtenstein,Switzerland,Austria'
+			country: 'Liechtenstein,Switzerland,Austria',
+			social_media_link:
+				'https://twitter.com/JNYBGR/status/1180416331281252353'
 		})
 	),
 	{
@@ -437,6 +439,70 @@ const overrides: Partial<DbActivity>[] = [
 	{
 		day: 1358,
 		distance: 3000
+	},
+	{
+		day: 1344,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1187453681026945026'
+	},
+	{
+		day: 1310,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1175108631190065152'
+	},
+	{
+		day: 1305,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1173285932675543046'
+	},
+	{
+		day: 1270,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1160579012273561602'
+	},
+	{
+		day: 1268,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1159901195097583616'
+	},
+	{
+		day: 1250,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1153378343649259531'
+	},
+	{
+		day: 1224,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1143945485352415233'
+	},
+	{
+		day: 1162,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1121452733205295104'
+	},
+	{
+		day: 1154,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1118527263828598784'
+	},
+	{
+		day: 1141,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1113843950702538752'
+	},
+	{
+		day: 1129,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1109485902286540801'
+	},
+	{
+		day: 1117,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1105194284658163714'
+	},
+	{
+		day: 1000,
+		social_media_link: 'https://www.youtube.com/watch?v=Yb7ZIl3Qaes'
 	}
 ];
 
