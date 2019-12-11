@@ -45,7 +45,7 @@
     "update": "rm -rf dist && tsc && node dist/update",
     "update-twitter-bio": "rm -rf dist && tsc && npx xns dist/update-twitter-bio",
     "update-twitter-pic": "rm -rf dist && tsc && npx xns dist/update-twitter-picture",
-    "update-weather": "rm -rf dist && tsc && npx xns decorate-with-weather"
+    "update-weather": "rm -rf dist && tsc && npx xns dist/decorate-with-weather"
   },
   "author": "",
   "license": "ISC"
