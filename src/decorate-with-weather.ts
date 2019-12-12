@@ -5,7 +5,7 @@ import ms = require('ms');
 
 require('dotenv').config();
 
-(async (): Promise<void> => {
+export default async (): Promise<void> => {
 	const db = await mongo();
 	const cursor = db.runs
 		.find({
@@ -37,12 +37,4 @@ require('dotenv').config();
 			)}`
 		);
 	}
-})()
-	.then((): void => {
-		console.log('done');
-		process.exit(0);
-	})
-	.catch((err): void => {
-		console.log(err);
-		process.exit(1);
-	});
+};

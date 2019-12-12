@@ -33,7 +33,7 @@ export default async (): Promise<void> => {
 		description: `${(Math.random() * 20 - 5).toFixed(
 			2
 		)}x hacker, ${howManyXEngineer} engineer - working on @BestandeApp @AnystickerApp.\nRan ${
-			runs.body.total
+			runs.total
 		} days in a row: jonny.run\nPart time hacker at @Axelra_AG`
 	});
 };
