@@ -26,7 +26,7 @@ export default async (): Promise<TokenResponse> => {
 		};
 	}
 
-	const response = (await got(
+	const body = (await got(
 		`https://www.strava.com/oauth/token?${qs.stringify({
 			client_id: process.env.STRAVA_CLIENT_ID,
 			grant_type: 'refresh_token',
@@ -37,7 +37,6 @@ export default async (): Promise<TokenResponse> => {
 			method: 'POST'
 		}
 	).json()) as any;
-	const { body } = response;
 	await db.token.updateOne(
 		{},
 		{

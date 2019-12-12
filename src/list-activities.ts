@@ -16,5 +16,5 @@ export default async (
 			}
 		}
 	).json()) as any;
-	return response.body;
+	return response;
 };

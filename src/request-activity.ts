@@ -5,11 +5,10 @@ import stravaUrl from './strava-url';
 
 export default async (activity: string): Promise<DetailedActivity> => {
 	const tokens = await getRefreshToken();
-	const response = (await got(`${stravaUrl}/activities/${activity}`, {
+	const body = (await got(`${stravaUrl}/activities/${activity}`, {
 		headers: {
 			Authorization: `Bearer ${tokens.access_token}`
 		}
 	}).json()) as any;
-	const { body } = response;
 	return body;
 };
