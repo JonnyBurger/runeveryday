@@ -28,6 +28,8 @@ export default async (): Promise<void> => {
 		'https://api.jonny.run/.netlify/functions/index'
 	).json()) as any;
 
+	console.log('Received response', runs);
+
 	await T.post('account/update_profile', {
 		// @ts-ignore - types are wrong
 		description: `${(Math.random() * 20 - 5).toFixed(
