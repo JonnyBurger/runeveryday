@@ -501,7 +501,7 @@ const overrides: Partial<DbActivity>[] = [
 			'https://twitter.com/JNYBGR/status/1105194284658163714'
 	},
 	{
-		day: 1196,
+		day: 1396,
 		social_media_link:
 			'https://twitter.com/JNYBGR/status/1206290865557319682'
 	},
