@@ -5,7 +5,7 @@ name: 🏃🏻‍♂️ Update jonny.run
 jobs:
   update:
     name: Update
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@master
     - run: |
