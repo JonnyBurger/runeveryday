@@ -1,0 +1,12 @@
+on: push
+name: Install and Test
+jobs:
+  install:
+    name: Install
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@master
+    - name: Install
+      run: npm i
+    - name: Test
+      run: npm test
