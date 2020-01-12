@@ -24,7 +24,8 @@
     "serverless-http": "^2.0.1",
     "strava-v3": "^1.14.0",
     "twit": "^2.2.11",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.3",
+    "xns": "^2.0.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.5",
@@ -43,9 +44,9 @@
     "start": "rm -rf dist && tsc && node dist",
     "queue": "rm -rf dist && tsc && node dist/queue",
     "update": "rm -rf dist && tsc && node dist/update",
-    "update-twitter-bio": "rm -rf dist && tsc && npx xns dist/update-twitter-bio",
-    "update-twitter-pic": "rm -rf dist && tsc && npx xns dist/update-twitter-picture",
-    "update-weather": "rm -rf dist && tsc && npx xns dist/decorate-with-weather"
+    "update-twitter-bio": "ts-node src/update-twitter-bio",
+    "update-twitter-pic": "ts-node src/update-twitter-picture",
+    "update-weather": "ts-node src/decorate-with-weather"
   },
   "author": "",
   "license": "ISC"

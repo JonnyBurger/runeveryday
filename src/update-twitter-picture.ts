@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import Twit from 'twit';
+import xns from 'xns';
 import createNewProfileImage from './create-new-profile-image';
 
 dotenv.config();
@@ -11,10 +12,12 @@ const T = new Twit({
 	access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET as string
 });
 
-export default async (): Promise<void> => {
-	const image = await createNewProfileImage();
-	await T.post('account/update_profile_image', {
-		// @ts-ignore
-		image: image.replace('data:image/png;base64,', '')
-	});
-};
+export default xns(
+	async (): Promise<void> => {
+		const image = await createNewProfileImage();
+		await T.post('account/update_profile_image', {
+			// @ts-ignore
+			image: image.replace('data:image/png;base64,', '')
+		});
+	}
+);
