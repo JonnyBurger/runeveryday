@@ -10,3 +10,6 @@ jobs:
       run: npm i
     - name: Test
       run: npm test
+      env:
+        GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
+        MONGO_URL: ${{ secrets.MONGO_URL }}
