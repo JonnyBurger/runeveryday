@@ -508,6 +508,11 @@ const overrides: Partial<DbActivity>[] = [
 	{
 		day: 1000,
 		social_media_link: 'https://www.youtube.com/watch?v=Yb7ZIl3Qaes'
+	},
+	{
+		day: 1431,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1218980723081826304'
 	}
 ];
 
