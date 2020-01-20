@@ -1,4 +1,6 @@
-on: push 
+on:
+schedule:
+  - cron: 0 9/12 * * *
 name: 📸 Screenshot twitter.com/JNYBGR
 jobs:
   update:
