@@ -4,7 +4,7 @@ import aws from 'aws-sdk';
 import puppeteer from 'puppeteer';
 
 xns(
-	async (): Promise<void> => {
+	async (): Promise<string> => {
 		const browser = await puppeteer.launch({
 			args: ['--no-sandbox', '--disable-setuid-sandbox']
 		});
@@ -15,6 +15,8 @@ xns(
 		});
 		await page.screenshot({ path: 'image.jpg' });
 
+		const Key = `${new Date().toISOString()}.jpg`;
+
 		await new Promise((resolve, reject): void => {
 			new aws.S3({
 				region: 'us-east-1'
@@ -22,7 +24,7 @@ xns(
 				{
 					Body: fs.readFileSync('image.jpg'),
 					Bucket: 'twitter-jonny',
-					Key: `${new Date().toISOString()}.jpg`,
+					Key,
 					ACL: 'public-read'
 				},
 				(err, d): void => {
@@ -37,5 +39,7 @@ xns(
 
 		await browser.close();
 		await fs.promises.unlink('image.jpg');
+
+		return 'https://twitter-jonny.s3.amazonaws.com/' + Key;
 	}
 );
