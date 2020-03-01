@@ -1,6 +1,7 @@
 on:
   schedule:
   - cron: 0 * * * *
+  repository_dispatch:
 name: 🐦 Update Twitter Bio
 jobs:
   update:
