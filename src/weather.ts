@@ -1,6 +1,6 @@
+import { format } from 'date-fns';
 import got from 'got';
 import { sortBy } from 'lodash';
-import { format } from 'date-fns';
 
 // created with json2ts.com!
 
@@ -90,11 +90,9 @@ export const getStationsForLocation = async (
 	latitude: number,
 	longitude: number
 ): Promise<Station[]> => {
-	const nearByStations = (await got(
-		`https://api.meteostat.net/v1/stations/nearby?lat=${latitude}&lon=${longitude}&limit=5&key=${process.env.WEATHER_API_KEY}`,
-		{}
-	).json()) as StationObject;
-	return nearByStations.data;
+	const url = `https://api.meteostat.net/v1/stations/nearby?lat=${latitude}&lon=${longitude}&limit=5&key=${process.env.WEATHER_API_KEY}`;
+	const nearByStations = await got(url, {});
+	return JSON.parse(nearByStations.body).data as Station[];
 };
 
 export const getHourlyWeather = async (
@@ -103,8 +101,8 @@ export const getHourlyWeather = async (
 ): Promise<WeatherDataPoint[]> => {
 	const formattedDate = format(date, 'yyyy-MM-dd');
 	const url = `https://api.meteostat.net/v1/history/hourly?station=${station}&start=${formattedDate}&end=${formattedDate}&key=${process.env.WEATHER_API_KEY}`;
-	const response = (await got(url).json()) as WeatherData;
-	return response.data;
+	const response = await got(url);
+	return JSON.parse(response.body).data as WeatherDataPoint[];
 };
 
 export const getClosestWeatherPoint = (
@@ -124,7 +122,7 @@ export const getClosestWeatherPoint = (
 export const getWeatherStationMetadata = async (
 	stationId: string
 ): Promise<StationInformation | null> => {
-	const url = `https://api.meteostat.net/v1/stations/meta?station=${stationId}&inventory=1&key=cwiXpUWq`;
-	const response = (await got(url).json()) as WeatherStationMetadata;
-	return response.data;
+	const url = `https://api.meteostat.net/v1/stations/meta?station=${stationId}&inventory=1&key=${process.env.WEATHER_API_KEY}`;
+	const response = await got(url);
+	return JSON.parse(response.body).data as StationInformation | null;
 };
