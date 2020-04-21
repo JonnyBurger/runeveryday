@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
-import xns from 'xns';
 import got from 'got';
 import Twit from 'twit';
+import xns from 'xns';
 
 dotenv.config();
 
@@ -9,7 +9,7 @@ const T = new Twit({
 	consumer_key: process.env.TWITTER_API_PUBLIC_KEY as string,
 	consumer_secret: process.env.TWITTER_API_SECRET_KEY as string,
 	access_token: process.env.TWITTER_ACCESS_TOKEN as string,
-	access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET as string
+	access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET as string,
 });
 
 const engineerAmounts = [
@@ -19,7 +19,7 @@ const engineerAmounts = [
 	'0y',
 	'NaNx',
 	'nullx',
-	'0.30000000000000004x'
+	'0.30000000000000004x',
 ];
 
 export default xns(
@@ -34,9 +34,9 @@ export default xns(
 			// @ts-ignore - types are wrong
 			description: `${(Math.random() * 20 - 5).toFixed(
 				2
-			)}x hacker, ${howManyXEngineer} engineer - working on @BestandeApp @AnystickerApp.\nRan ${
+			)}x hacker, ${howManyXEngineer} engineer - working on bestande.ch anysticker.app.\nRan ${
 				runs.total
-			} days in a row: jonny.run\nPart time hacker at @Axelra_AG`
+			} days in a row: jonny.run\nPart time hacker at @Axelra_AG`,
 		});
 
 		return 'Bio updated.';
