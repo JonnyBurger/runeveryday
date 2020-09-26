@@ -4,20 +4,20 @@ const overrides: Partial<DbActivity>[] = [
 	{
 		day: 1222,
 		drunk:
-			'We hacked the whole weekend at the Swiss Blockchain hackathon and on Sunday afternoon we got up late and went to the award ceremony. Then we found out that we won the hackathon and $20k for our team, so of course we got lit. Only after that I had time to go for my run.'
+			'We hacked the whole weekend at the Swiss Blockchain hackathon and on Sunday afternoon we got up late and went to the award ceremony. Then we found out that we won the hackathon and $20k for our team, so of course we got lit. Only after that I had time to go for my run.',
 	},
 	{
 		day: 1172,
 		distance: 3440,
 		city: 'Zürich',
-		country: 'Switzerland'
+		country: 'Switzerland',
 	},
 	{
 		day: 1171,
 		distance: 2500,
 		city: 'Zürich',
 		country: 'Switzerland',
-		treadmill: 'Manual Treadmill'
+		treadmill: 'Manual Treadmill',
 	},
 	...[
 		1170,
@@ -43,57 +43,57 @@ const overrides: Partial<DbActivity>[] = [
 		1254,
 		1257,
 		1265,
-		1266
+		1266,
 	].map(
 		(day: number): Partial<DbActivity> => ({
 			day,
 			distance: 2500,
 			city: 'Zürich',
-			country: 'Switzerland'
+			country: 'Switzerland',
 		})
 	),
 	{
 		day: 1167,
 		distance: 2500,
 		city: 'Zürich',
-		country: 'Switzerland'
+		country: 'Switzerland',
 	},
 	{
 		day: 1163,
 		distance: 2500,
 		city: 'Zürich',
 		country: 'Switzerland',
-		treadmill: 'Treadmill'
+		treadmill: 'Treadmill',
 	},
 	{
 		day: 1168,
 		injured:
-			'Felt some significant pain in my lower back which just suddenly appeared when I stood up earlier this day'
+			'Felt some significant pain in my lower back which just suddenly appeared when I stood up earlier this day',
 	},
 	{
 		day: 565,
 		injured:
-			'The night before I twisted my ankle after going out while chasing an Uber and stepping into a pothole. I was limping this 2.5km!'
+			'The night before I twisted my ankle after going out while chasing an Uber and stepping into a pothole. I was limping this 2.5km!',
 	},
 	{
 		day: 688,
-		distance: 2500
+		distance: 2500,
 	},
 	{
 		day: 1139,
-		distance: 2600
+		distance: 2600,
 	},
 	...[658, 659, 660, 661].map(
 		(day: number): Partial<DbActivity> => ({
 			day,
-			city: 'Sofia'
+			city: 'Sofia',
 		})
 	),
 	...[664, 665, 666, 667, 668, 669, 670, 671, 672].map(
 		(day): Partial<DbActivity> => ({
 			day,
 			sick:
-				"During these days I had fever and was laying in bed all day. But I did not wanna give up and went out running (often while it was snowing). Don't do this!"
+				"During these days I had fever and was laying in bed all day. But I did not wanna give up and went out running (often while it was snowing). Don't do this!",
 		})
 	),
 	...[
@@ -296,14 +296,14 @@ const overrides: Partial<DbActivity>[] = [
 		481,
 		480,
 		477,
-		475
+		475,
 	].map(
 		(day: number): Partial<DbActivity> => ({
 			day,
 			distance: 2500,
 			city: 'Zürich',
 			country: 'Switzerland',
-			treadmill: 'Treadmill'
+			treadmill: 'Treadmill',
 		})
 	),
 	...[919, 915, 914, 913, 912, 911, 910].map(
@@ -312,7 +312,7 @@ const overrides: Partial<DbActivity>[] = [
 			distance: 2500,
 			city: 'Los Angeles',
 			country: 'United States',
-			treadmill: 'Bunker Hill Towers Gym Treadmil'
+			treadmill: 'Bunker Hill Towers Gym Treadmil',
 		})
 	),
 	...[
@@ -337,72 +337,72 @@ const overrides: Partial<DbActivity>[] = [
 		904,
 		903,
 		902,
-		901
+		901,
 	].map(
 		(day: number): Partial<DbActivity> => ({
 			day,
-			city: 'Los Angeles'
+			city: 'Los Angeles',
 		})
 	),
 	...[170, 730].map(
 		(day: number): Partial<DbActivity> => ({
 			day,
-			city: 'Milan'
+			city: 'Milan',
 		})
 	),
 	...[964, 963, 962, 961, 960].map(
 		(day: number): Partial<DbActivity> => ({
 			day,
-			city: 'Sofia'
+			city: 'Sofia',
 		})
 	),
 	{
 		day: 1160,
 		drunk:
-			'Forgot all my running stuff and went to a football game afterwards where I drank some beers'
+			'Forgot all my running stuff and went to a football game afterwards where I drank some beers',
 	},
 	{
 		day: 170,
 		drunk:
-			'Was going out in Milan and went for a run for the next day when I came home!'
+			'Was going out in Milan and went for a run for the next day when I came home!',
 	},
 	{
 		day: 855,
-		drunk: 'Open Air Southside'
+		drunk: 'Open Air Southside',
 	},
 	{
 		day: 856,
-		drunk: 'Open Air Southside'
+		drunk: 'Open Air Southside',
 	},
 	{
 		day: 857,
-		drunk: 'Open Air Southside'
+		drunk: 'Open Air Southside',
 	},
 	{
 		day: 862,
-		drunk: 'Open Air St. Gallen'
+		drunk: 'Open Air St. Gallen',
 	},
 	{
 		day: 863,
-		drunk: 'Open Air St. Gallen'
+		drunk: 'Open Air St. Gallen',
 	},
 	{
 		day: 500,
 		drunk:
-			'I was still totally lit from Open Air St. Gallen when I ran almost at midnight. Probably the drunkest run I ever done'
+			'I was still totally lit from Open Air St. Gallen when I ran almost at midnight. Probably the drunkest run I ever done',
 	},
 	{
 		day: 1174,
 		distance: 2500,
 		city: 'Zürich',
 		country: 'Switzerland',
-		date: 1557252405003
+		date: 1557252405003,
 	},
 	...[1274, 1178, 1278, 1289].map(
 		(day: number): Partial<DbActivity> => ({
 			day,
 			city: 'Zürich',
-			country: 'Switzerland'
+			country: 'Switzerland',
 		})
 	),
 	...[1270, 1271, 1272].map(
@@ -410,13 +410,13 @@ const overrides: Partial<DbActivity>[] = [
 			city: 'Budapest',
 			country: 'Hungary',
 			day,
-			drunk: 'Sziget Festival'
+			drunk: 'Sziget Festival',
 		})
 	),
 	...[1275, 1276, 1277, 1278].map(
 		(day: number): Partial<DbActivity> => ({
 			day,
-			sick: 'Light fever 🤒'
+			sick: 'Light fever 🤒',
 		})
 	),
 	...[1324].map(
@@ -424,106 +424,126 @@ const overrides: Partial<DbActivity>[] = [
 			day,
 			country: 'Liechtenstein,Switzerland,Austria',
 			social_media_link:
-				'https://twitter.com/JNYBGR/status/1180416331281252353'
+				'https://twitter.com/JNYBGR/status/1180416331281252353',
 		})
 	),
 	{
 		day: 1380,
-		distance: 3000
+		distance: 3000,
 	},
 	{
 		day: 1364,
 		strava_id: '2863018618',
-		distance: 3000
+		distance: 3000,
 	},
 	{
 		day: 1358,
-		distance: 3000
+		distance: 3000,
 	},
 	{
 		day: 1344,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1187453681026945026'
+			'https://twitter.com/JNYBGR/status/1187453681026945026',
 	},
 	{
 		day: 1310,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1175108631190065152'
+			'https://twitter.com/JNYBGR/status/1175108631190065152',
 	},
 	{
 		day: 1305,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1173285932675543046'
+			'https://twitter.com/JNYBGR/status/1173285932675543046',
 	},
 	{
 		day: 1270,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1160579012273561602'
+			'https://twitter.com/JNYBGR/status/1160579012273561602',
 	},
 	{
 		day: 1268,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1159901195097583616'
+			'https://twitter.com/JNYBGR/status/1159901195097583616',
 	},
 	{
 		day: 1250,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1153378343649259531'
+			'https://twitter.com/JNYBGR/status/1153378343649259531',
 	},
 	{
 		day: 1224,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1143945485352415233'
+			'https://twitter.com/JNYBGR/status/1143945485352415233',
 	},
 	{
 		day: 1162,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1121452733205295104'
+			'https://twitter.com/JNYBGR/status/1121452733205295104',
 	},
 	{
 		day: 1154,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1118527263828598784'
+			'https://twitter.com/JNYBGR/status/1118527263828598784',
 	},
 	{
 		day: 1141,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1113843950702538752'
+			'https://twitter.com/JNYBGR/status/1113843950702538752',
 	},
 	{
 		day: 1129,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1109485902286540801'
+			'https://twitter.com/JNYBGR/status/1109485902286540801',
 	},
 	{
 		day: 1117,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1105194284658163714'
+			'https://twitter.com/JNYBGR/status/1105194284658163714',
 	},
 	{
 		day: 1396,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1206290865557319682'
+			'https://twitter.com/JNYBGR/status/1206290865557319682',
 	},
 	{
 		day: 1000,
-		social_media_link: 'https://www.youtube.com/watch?v=Yb7ZIl3Qaes'
+		social_media_link: 'https://www.youtube.com/watch?v=Yb7ZIl3Qaes',
 	},
 	{
 		day: 1431,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1218980723081826304'
+			'https://twitter.com/JNYBGR/status/1218980723081826304',
 	},
 	{
 		day: 1446,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1224414177063833601'
+			'https://twitter.com/JNYBGR/status/1224414177063833601',
 	},
 	{
 		day: 1472,
 		social_media_link:
-			'https://twitter.com/JNYBGR/status/1233818596746387456'
-	}
+			'https://twitter.com/JNYBGR/status/1233818596746387456',
+	},
+	{
+		day: 1563,
+		city: 'Zurich',
+		country: 'Switzerland',
+	},
+	{
+		day: 1592,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1277272633713790977',
+	},
+	{
+		day: 1635,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1292876767535992833',
+	},
+	{
+		day: 1646,
+		social_media_link:
+			'https://twitter.com/JNYBGR/status/1296885489727832065',
+	},
 ];
 
 export default overrides;
