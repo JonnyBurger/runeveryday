@@ -22,21 +22,10 @@ export default xns(
 				hour12: false,
 			}).format(new Date())
 		);
-		const darkMode = hoursInZurich >= 19 || hoursInZurich < 6.9;
-		const bg = await Jimp.read('./assets/black.png');
-		const background = await Jimp.read(
-			darkMode ? './assets/black.png' : './assets/black.png'
-		);
+		const background = await Jimp.read('./assets/white.png');
 
-		const lightBg = bg.composite(background, 0, 0, {
-			opacityDest: 1,
-			opacitySource: darkMode ? 0.4 : 0.7,
-			mode: Jimp.BLEND_SOURCE_OVER,
-		});
-		const fg = await Jimp.read(
-			darkMode ? './assets/jonny-dark.png' : './assets/jonny-light.png'
-		);
-		const combined = lightBg.composite(fg, 0, 0);
+		const fg = await Jimp.read('./assets/jonny-light.png');
+		const combined = background.composite(fg, 0, 0);
 		const image = await combined.getBase64Async('image/png');
 		await T.post('account/update_profile_image', {
 			// @ts-ignore

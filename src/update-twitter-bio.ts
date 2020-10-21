@@ -1,5 +1,4 @@
 import dotenv from 'dotenv';
-import got from 'got';
 import Twit from 'twit';
 import xns from 'xns';
 
@@ -12,31 +11,11 @@ const T = new Twit({
 	access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET as string,
 });
 
-const engineerAmounts = [
-	'0x',
-	'-0.00001x',
-	'undefinedx',
-	'0y',
-	'NaNx',
-	'nullx',
-	'0.30000000000000004x',
-];
-
 export default xns(
 	async (): Promise<string> => {
-		const howManyXEngineer =
-			engineerAmounts[Math.floor(Math.random() * engineerAmounts.length)];
-		const runs = (await got(
-			'https://api.jonny.run/.netlify/functions/index'
-		).json()) as any;
-
 		await T.post('account/update_profile', {
 			// @ts-ignore - types are wrong
-			description: `${(Math.random() * 20 - 5).toFixed(
-				2
-			)}x hacker, ${howManyXEngineer} engineer - working on bestande.ch anysticker.app.\nRan ${
-				runs.total
-			} days in a row: jonny.run\nPart time hacker at @Axelra_AG`,
+			description: 'Creative hacker',
 		});
 
 		return 'Bio updated.';
