@@ -14,7 +14,7 @@ router.get(
 	async (request, response): Promise<void> => {
 		const offset = Number(request.query.offset || 0);
 		const db = await mongo();
-		const day = getDay(new Date()) - offset;
+		const day = getDay(new Date('2020-12-17')) - offset;
 		const runs = await db.runs
 			.find({
 				day: { $lte: new Date('2020-12-17').getTime(), $gt: day - 100 },
